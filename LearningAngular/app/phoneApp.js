@@ -3,8 +3,22 @@ var phoneApp = angular.module("phoneApp", []);
 phoneApp.controller("AppCtrl", function($scope){
     $scope.leaveMessage = function(number, message){
         alert("Number [" + number + "] says '" + message + "'.");
+    };
+
+    this.sayHi = function(){
+        alert("Hi!")
+    };
+
+    return $scope.AppCtrl = this;
+});
+
+phoneApp.directive("panel", function(){
+    return {
+        restrict: "E",
+        transclude: true,
+        template: '<div class="panel" ng-transclude>This is a panel component</div>'
     }
-})
+});
 
 phoneApp.directive("phone", function(){
     return {
@@ -25,4 +39,4 @@ phoneApp.directive("phone", function(){
             scope.network = scope.networks[0];
         }
     }
-})
+});

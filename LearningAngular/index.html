@@ -6,19 +6,14 @@
 </head>
 <body>
 
-<div ng-app="phoneApp">
+<div ng-app="viewApp">
 
-    <div ng-controller="AppCtrl">
-        <phone number="111-222" network="network" call="leaveMessage(number, message)"></phone>
-        <phone number="333-222" network="network" call="leaveMessage(number, message)"></phone>
-        <phone number="111-444" network="network" call="leaveMessage(number, message)"></phone>
-    </div>
-
+    <ng-view></ng-view>
 
 </div>
 
 <script type="text/javascript" src="lib/angular.js"></script>
-<script type="text/javascript" src="app/phoneApp.js"></script>
+<script type="text/javascript" src="app/viewApp.js"></script>
 
 </body>
 </html>
