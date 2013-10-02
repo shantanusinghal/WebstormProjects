@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning Angular</title>
+    <link rel="stylesheet" href="css/foundation.min.css"/>
+</head>
+<body>
+
+<div ng-app="copyApp" ng-controller="AppCtrl">
+
+    <form>
+        <input type="text" ng-model="appCtrl.contactCopy.firstName"/>
+        <button ng-click="appCtrl.saveContact()">Save</button>
+    </form>
+
+    <div class="div" style="margin-top: 40px"></div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>First</td>
+            <td>Last</td>
+            <td>Phone</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="contact in appCtrl.contacts" ng-click="appCtrl.selectContact(contact)">
+            <td>{{contact.firstName}}</td>
+            <td>{{contact.lastName}}</td>
+            <td>{{contact.phone}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<script type="text/javascript" src="lib/angular.js"></script>
+<script type="text/javascript" src="lib/angular-animate.js"></script>
+<script type="text/javascript" src="app/copyApp.js"></script>
+
+</body>
+</html>

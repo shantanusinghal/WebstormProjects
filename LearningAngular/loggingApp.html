@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning Angular</title>
+    <link rel="stylesheet" href="css/foundation.min.css"/>
+</head>
+<body>
+
+<div ng-app="loggingApp">
+
+    <div ng-controller="AppCtrl">
+        <div
+                class="button"
+                ng-repeat="character in 'shantanu'.split('')"
+                ng-click="$log.log($event)">
+            {{$index + 1}}. {{character}}
+            {{ev.pageX}}
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="lib/angular.js"></script>
+<script type="text/javascript" src="app/loggingApp.js"></script>
+
+</body>
+</html>
